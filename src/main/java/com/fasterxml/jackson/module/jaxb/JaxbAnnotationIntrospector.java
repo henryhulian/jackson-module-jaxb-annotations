@@ -732,11 +732,11 @@ public class JaxbAnnotationIntrospector
     {
         XmlElementWrapper w = a.getAnnotation(XmlElementWrapper.class);
         if (w != null) {
-            return w.nillable() ? JsonInclude.Include.ALWAYS : JsonInclude.Include.NON_NULL;
+            return w.nillable() ? JsonInclude.Include.ALWAYS : JsonInclude.Include.NON_EMPTY;
         }
         XmlElement e = a.getAnnotation(XmlElement.class);
         if (e != null) {
-            return e.nillable() ? JsonInclude.Include.ALWAYS : JsonInclude.Include.NON_NULL;
+            return e.nillable() ? JsonInclude.Include.ALWAYS : JsonInclude.Include.NON_EMPTY;
         }
         /* [JACKSON-256]: better pass default value through, if no explicit direction indicating
          * otherwise
